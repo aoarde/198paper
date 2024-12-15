@@ -12,6 +12,8 @@ library(descr)
 library(RColorBrewer)
 library(dplyr)
 library(forcats)
+install.packages("TraMineRextras")
+library(TraMineRextras)
 
 #set destination
 getwd()
