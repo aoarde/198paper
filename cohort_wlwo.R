@@ -67,10 +67,10 @@ VNMMain <- VNMMain %>%
 
 #Cohort according to gender and hh members
 VNMMain$COHORT <- "NA"
-VNMMain$COHORT[VNMMain$Gender==2 & VNMMain$Number_of_Household_Members==1] <- "Women living alone"
-VNMMain$COHORT[VNMMain$Gender==2 & VNMMain$Number_of_Household_Members>1] <- "Women living with others"
-VNMMain$COHORT[VNMMain$Gender==1 & VNMMain$Number_of_Household_Members==1] <- "Men living alone"
-VNMMain$COHORT[VNMMain$Gender==1 & VNMMain$Number_of_Household_Members>1] <- "Men living with others"
+VNMMain$COHORT[VNMMain$Gender=="Female" & VNMMain$Number_of_Household_Members==1] <- "Women living alone"
+VNMMain$COHORT[VNMMain$Gender=="Female" & VNMMain$Number_of_Household_Members>1] <- "Women living with others"
+VNMMain$COHORT[VNMMain$Gender=="Male" & VNMMain$Number_of_Household_Members==1] <- "Men living alone"
+VNMMain$COHORT[VNMMain$Gender=="Male" & VNMMain$Number_of_Household_Members>1] <- "Men living with others"
 
 # Keep Women living alone
 c_wlwo <- VNMMain %>% filter(VNMMain$COHORT == "Women living with others")
