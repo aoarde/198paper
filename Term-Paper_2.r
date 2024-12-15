@@ -65,10 +65,10 @@ VNMMain <- VNMMain %>%
 
 #Cohort according to gender and hh members
 VNMMain$COHORT <- "NA"
-VNMMain$COHORT[VNMMain$Gender==2 & VNMMain$Number_of_Household_Members==1] <- "Women living alone"
-VNMMain$COHORT[VNMMain$Gender==2 & VNMMain$Number_of_Household_Members>1] <- "Women living with others"
-VNMMain$COHORT[VNMMain$Gender==1 & VNMMain$Number_of_Household_Members==1] <- "Men living alone"
-VNMMain$COHORT[VNMMain$Gender==1 & VNMMain$Number_of_Household_Members>1] <- "Men living with others"
+VNMMain$COHORT[VNMMain$Gender=="Female" & VNMMain$Number_of_Household_Members==1] <- "Women living alone"
+VNMMain$COHORT[VNMMain$Gender=="Female" & VNMMain$Number_of_Household_Members>1] <- "Women living with others"
+VNMMain$COHORT[VNMMain$Gender=="Male" & VNMMain$Number_of_Household_Members==1] <- "Men living alone"
+VNMMain$COHORT[VNMMain$Gender=="Male" & VNMMain$Number_of_Household_Members>1] <- "Men living with others"
 
 # Create a list to store dataframes for each cohort
 cohort_data_list <- list()
